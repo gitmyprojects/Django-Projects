@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- the base.html file has 'content' tags but no content inside of them. -->
+<!-- because we EXTEND the base.html file, we can call those tags but tell django-->
+<!-- that on THIS page, put this content inside the 'content' tags-->
+
+{% block content %}
+
+<style type="text/css">
+	.my-grid{
+		border: 1px solid blue;
+	}
+	.my-grid-item{
+		border: 1px solid black;
+</style>
+<div class="container"> <!-- container comes prebuilt class with bootstrap
+	that brings all the content to the center of the page-->
+	<div class="my-grid d-flex flex-row"> <!--google 'how to use flex box to learn more
+	about how to style html into rows and columns
+	d-flex class is saying, hey im trying to use flexbox, its a class you should always apply-->
+		<!-- flex row will give columns and vice versa-->
+		<p class="my-grid-item m-auto">ITEM<span class="material-icons">lightbulb</span></p> <!--margin auto-->
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+	</div>
+ 		<!-- mt=margin top-->
+	<div class="my-grid d-flex flex-column mt-4">
+		<p class="my-grid-item m-auto">ITEM</p> <!--margin auto-->
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+		<p class="my-grid-item m-auto">ITEM</p>
+	</div>
+
+</div>
+{% endblock content %}
+
+<!-- Now that this page is created, we have to tell django to render it when the
+ url entered. the url is mapped inside of the function on the views.py file for this app
+ well tell django about this url in the url.py file in the mainapp in the 'urlpatters' variable
+ -->

@@ -1,0 +1,27 @@
+media cdn and static cdn, we created because we are hosting the files on the local server.
+normally when a site goes into production, the static files would be stored on a cloud service
+such as AWS (amazon web service)
+
+anytime you see an import from django, that is a built-in django classs so you can just google the class
+to see how it works and understand more.
+     when that built-in class is being passed in as a parameter of a class that is created, you are
+     extending that built-in class AND overwriting some of its features.
+
+
+the header.html template contains notes regarding bootstrap style classes such as md-4 (medium-4)
+
+
+-------------------------------fixes needed---------------------------
+the search is still case sensitive
+i cant click on my image and get drop down options. check email sent to mitch for more details
+the user account screen didnt work because it doesnt recognize the constant BASE_URL stored in settings.
+
+
+
+-------------------------------Questions for Mitch---------------------------
+How long did it take him to write everything in the course?
+how long has he been a programmer?
+How much of this course could a junior developer have done?
+
+-------------------------------General Questions---------------------------
+I need to know more about context = {}

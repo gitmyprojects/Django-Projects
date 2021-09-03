@@ -1,0 +1,1 @@
+anytime files are added to these folders, you have to run python manage.py collectstatic

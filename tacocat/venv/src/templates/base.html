@@ -1,0 +1,52 @@
+<!-- this is telling django to bring in the static files-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- so this is saying, look into my static files, which is static_cdn,
+look in the 'bootstrap' directory, then look in css, then look for the file 'bootstrap.min.css'-->
+     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<title>Tacocat</title>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+		  rel="stylesheet">
+</head>
+
+<body>
+<!-- Header -->
+{% include 'snippets/base_css.html' %}
+{% include 'snippets/base_js.html' %}
+{% include 'snippets/header.html' %}
+<!-- End Header -->
+
+<!-- this is forcing the footer to always be at the bottom of the page-->
+<style type="text/css">
+	.main{
+		min-height: 100vh;
+		height: 100%;
+	}
+</style>
+
+<!-- Body -->
+<div class="main">
+	{% block content %}
+
+	{% endblock content %}
+</div>
+<!-- End Body -->
+
+{% include 'snippets/footer.html' %}
+
+
+<!-- there is a purpose for these being at the bottom of the page-->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+
+</html>
